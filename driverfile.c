@@ -22,3 +22,5 @@ static void reset_sequence(void) {
     seq_index = 0;
     printk(KERN_INFO "Sequence reset.\n");
 }
+
+static int keyboard_event_notify
