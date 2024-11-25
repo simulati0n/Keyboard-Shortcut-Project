@@ -16,6 +16,19 @@ static const unsigned long timeout_ms = 1000; // Timeout for sequence (1 second)
 
 static void execute_action(void) {
     printk(KERN_INFO "Shortcut Action: Open YouTube\n");
+
+    // xdg-open opens YouTube in default browser
+    char *argv[] = {"/usr/bin/xdg-open", "https://www.youtube.com", NULL};
+    char *envp[] = {NULL};
+
+    // call_usermodehelper to launch the browser
+    int ret = call_usermodehelper(argv[0], argv, envp, UMH_NO_WAIT);
+
+    if (ret < 0) {
+        printk(KERN_ERR "Failed to execute action: %d\n", ret);
+    } else {
+        printk(KERN_INFO "Browser launched successfully.\n");
+    }
 }
 
 static void reset_sequence(void) {
