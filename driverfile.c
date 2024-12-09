@@ -6,8 +6,6 @@
 #include <linux/timer.h>
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Your Name");
-MODULE_DESCRIPTION("Multi-Key Sequence Shortcut Driver");
 
 static char *sequence[] = {"ctrl", "alt", "y"};  // Example sequence
 static int seq_index = 0;
