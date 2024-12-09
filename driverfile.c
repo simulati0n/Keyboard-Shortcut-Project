@@ -10,7 +10,7 @@ MODULE_LICENSE("GPL");
 static char *sequence[] = {"ctrl", "alt", "y"};  // Example sequence
 static int seq_index = 0;
 static unsigned long last_key_time = 0;
-static const unsigned long timeout_ms = 1000; // Timeout for sequence (1 second)
+static const unsigned long timeout_ms = 4000; // Timeout for sequence (4 seconds)
 
 static void execute_action(void) {
     printk(KERN_INFO "Shortcut Action: Open YouTube\n");
